@@ -2,6 +2,7 @@
 
 from math import *
 from tkinter import *
+from tkinter import scrolledtext
 from datetime import datetime
 import os
 
@@ -25,7 +26,7 @@ def start():
     time = datetime.now()
     time = str(time.date()).replace('-', '')
     
-    git_code = ['git pull', 'git add *', f'git commit -m "{time}"', 'git push']
+    git_code = ['git pull', 'git add *', 'git add -A', f'git commit -m "{time}"', 'git push']
     
     result = ''
     url = con1.edt1.get()
@@ -53,7 +54,8 @@ edtFrame.pack()
 
 con1 = Cont1(edtFrame)
 
-txt = Text(edtFrame)
+txt = scrolledtext.ScrolledText(edtFrame)
 txt.pack(side = BOTTOM, fill=BOTH, expand=1)
+txt.configure(state='disabled')
 
 root.mainloop()
