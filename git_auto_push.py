@@ -43,6 +43,7 @@ def start():
         result += str(path) + "\n\n"
     
     txt.insert(END, result)
+    txt.configure(state='disabled')
 
 root = Tk()
 root.geometry('600x400')
@@ -56,6 +57,5 @@ con1 = Cont1(edtFrame)
 
 txt = scrolledtext.ScrolledText(edtFrame)
 txt.pack(side = BOTTOM, fill=BOTH, expand=1)
-txt.configure(state='disabled')
 
 root.mainloop()
